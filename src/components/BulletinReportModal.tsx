@@ -27,24 +27,24 @@ export const BulletinReportModal: React.FC<BulletinReportModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs overflow-y-auto">
       <div className="bg-white rounded-lg border border-[#E2E8F0] shadow-2xl max-w-2xl w-full my-8 overflow-hidden print:m-0 print:border-none print:shadow-none">
         {/* Modal Action Header (hidden in print) */}
-        <div className="p-4 border-b border-[#E2E8F0] bg-[#F8FAFC] flex items-center justify-between print:hidden">
+        <div className="p-4 border-b border-rose-200/80 bg-rose-50/40 flex items-center justify-between print:hidden">
           <div className="flex items-center gap-2">
-            <FileText className="w-5 h-5 text-[#0EA5E9]" />
-            <h3 className="text-sm font-bold text-[#0F172A]">
-              Official National Air Quality Bulletin
+            <FileText className="w-5 h-5 text-rose-500" />
+            <h3 className="text-sm font-bold text-[#1E1124]">
+              Hey Haze National Air Quality Bulletin
             </h3>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-[#0F172A] text-white rounded hover:bg-slate-800 transition-colors shadow-xs"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 text-white rounded-md transition-all shadow-xs shadow-rose-500/20"
             >
               <Printer className="w-3.5 h-3.5" />
               Print / Save PDF
             </button>
             <button
               onClick={onClose}
-              className="p-1 rounded text-[#64748B] hover:text-[#0F172A] hover:bg-slate-200 transition-colors"
+              className="p-1 rounded text-[#64748B] hover:text-rose-900 hover:bg-rose-100 transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -52,24 +52,24 @@ export const BulletinReportModal: React.FC<BulletinReportModalProps> = ({
         </div>
 
         {/* Printable Bulletin Document */}
-        <div className="p-6 sm:p-8 space-y-6 text-[#0F172A]">
+        <div className="p-6 sm:p-8 space-y-6 text-[#1E1124]">
           {/* Official Letterhead */}
-          <div className="border-b-2 border-[#0F172A] pb-4 flex items-start justify-between">
+          <div className="border-b-2 border-rose-900 pb-4 flex items-start justify-between">
             <div>
-              <div className="text-[10px] font-bold uppercase tracking-widest text-[#64748B]">
+              <div className="text-[10px] font-bold uppercase tracking-widest text-rose-700">
                 REPUBLIC OF SINGAPORE
               </div>
-              <h1 className="text-xl font-bold tracking-tight text-[#0F172A]">
-                NATIONAL ENVIRONMENT AGENCY
+              <h1 className="text-xl font-extrabold tracking-tight text-[#1E1124]">
+                HEY HAZE • NATIONAL AIR QUALITY BULLETIN
               </h1>
               <div className="text-xs text-[#475569]">
-                Environmental Monitoring & Telemetry Division • Ambient Air Assessment Bureau
+                National Environment Agency • Continuous Ambient Assessment Bureau
               </div>
             </div>
             <div className="text-right text-xs">
-              <div className="font-bold text-[#0F172A]">DAILY AIR QUALITY BULLETIN</div>
+              <div className="font-bold text-[#1E1124]">DAILY AIR QUALITY BULLETIN</div>
               <div className="text-[#64748B] text-[11px]">{national.lastUpdated}</div>
-              <div className="text-[10px] text-[#94A3B8] font-mono">REF: NEA-AQB-2026-10</div>
+              <div className="text-[10px] text-rose-700 font-mono">REF: HEYHAZE-AQB-2026-SUMMER</div>
             </div>
           </div>
 

@@ -59,14 +59,17 @@ export const SingaporeMap: React.FC<SingaporeMapProps> = ({
   const activeBand = getStatusBand(activeFocusData.psi24Hr);
 
   return (
-    <div className="bg-white rounded-lg border border-[#E2E8F0] shadow-sm overflow-hidden flex flex-col">
-      {/* Map Header Toolbar */}
-      <div className="p-4 border-b border-[#E2E8F0] bg-[#F8FAFC] flex flex-wrap items-center justify-between gap-3">
+    <div className="bg-white rounded-lg border border-rose-200/80 shadow-xs overflow-hidden flex flex-col">
+      {/* Map Header Toolbar with Summer Rose Tint */}
+      <div className="p-4 border-b border-rose-200/80 bg-rose-50/40 flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <Layers className="w-4 h-4 text-[#0EA5E9]" />
+          <Layers className="w-4 h-4 text-rose-500" />
           <div>
-            <h3 className="text-sm font-semibold text-[#0F172A]">
-              Singapore National Air Quality Spatial Telemetry
+            <h3 className="text-sm font-semibold text-[#1E1124] flex items-center gap-1.5">
+              <span>Hey Haze Singapore Spatial Telemetry</span>
+              <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.2 rounded bg-rose-100 text-rose-700 border border-rose-200">
+                Summer Grid
+              </span>
             </h3>
             <p className="text-xs text-[#64748B]">
               NEA 5-Region Monitoring Grid & Continuous Ambient Telemetry Stations
@@ -80,11 +83,11 @@ export const SingaporeMap: React.FC<SingaporeMapProps> = ({
             onClick={() => setShowWinds(!showWinds)}
             className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded transition-colors ${
               showWinds
-                ? 'bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD]'
-                : 'bg-white text-[#64748B] border border-[#CBD5E1] hover:bg-slate-50'
+                ? 'bg-rose-100/90 text-rose-800 border border-rose-300/80 shadow-2xs'
+                : 'bg-white text-[#64748B] border border-rose-200 hover:bg-rose-50/50'
             }`}
           >
-            <Wind className="w-3.5 h-3.5" />
+            <Wind className="w-3.5 h-3.5 text-rose-600" />
             <span>Monsoon Wind Vectors</span>
           </button>
 
@@ -92,18 +95,18 @@ export const SingaporeMap: React.FC<SingaporeMapProps> = ({
             onClick={() => setShowStations(!showStations)}
             className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded transition-colors ${
               showStations
-                ? 'bg-[#E0F2FE] text-[#0369A1] border border-[#BAE6FD]'
-                : 'bg-white text-[#64748B] border border-[#CBD5E1] hover:bg-slate-50'
+                ? 'bg-rose-100/90 text-rose-800 border border-rose-300/80 shadow-2xs'
+                : 'bg-white text-[#64748B] border border-rose-200 hover:bg-rose-50/50'
             }`}
           >
-            <Radio className="w-3.5 h-3.5" />
+            <Radio className="w-3.5 h-3.5 text-rose-600" />
             <span>Sensor Nodes</span>
           </button>
 
           {selectedRegion !== 'national' && (
             <button
               onClick={() => onSelectRegion('national')}
-              className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-medium bg-[#0F172A] text-white rounded hover:bg-slate-800 transition-colors"
+              className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 text-white rounded transition-colors shadow-2xs"
             >
               <Eye className="w-3.5 h-3.5" />
               Reset Islandwide
@@ -112,30 +115,30 @@ export const SingaporeMap: React.FC<SingaporeMapProps> = ({
         </div>
       </div>
 
-      {/* Main Interactive SVG Canvas */}
-      <div className="relative w-full bg-[#EFF6FF]/30 min-h-[360px] sm:min-h-[460px] flex items-center justify-center p-2 sm:p-6 select-none overflow-hidden">
+      {/* Main Interactive SVG Canvas with Summer Rose Wash */}
+      <div className="relative w-full bg-[#FFF0F4]/35 min-h-[360px] sm:min-h-[460px] flex items-center justify-center p-2 sm:p-6 select-none overflow-hidden">
         {/* Subtle Map Grid Backdrop */}
         <div
           className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
             backgroundImage:
-              'radial-gradient(#94A3B8 1px, transparent 1px), radial-gradient(#94A3B8 1px, #EFF6FF 1px)',
+              'radial-gradient(#FB7185 1px, transparent 1px), radial-gradient(#FB7185 1px, #FFF0F4 1px)',
             backgroundSize: '24px 24px',
             backgroundPosition: '0 0, 12px 12px',
           }}
         />
 
         {/* Compass Rose in Corner */}
-        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-xs border border-[#E2E8F0] rounded p-2 text-center shadow-xs pointer-events-none">
+        <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-xs border border-rose-200 rounded p-2 text-center shadow-xs pointer-events-none">
           <div className="flex flex-col items-center">
-            <span className="text-[10px] font-bold text-[#0F172A]">N</span>
-            <Compass className="w-5 h-5 text-[#64748B] my-0.5" />
-            <span className="text-[9px] text-[#94A3B8]">S</span>
+            <span className="text-[10px] font-bold text-rose-900">N</span>
+            <Compass className="w-5 h-5 text-rose-400 my-0.5" />
+            <span className="text-[9px] text-rose-300">S</span>
           </div>
         </div>
 
         {/* Active Inspection Card Overlay */}
-        <div className="absolute bottom-4 left-4 z-20 bg-white/95 backdrop-blur-md border border-[#E2E8F0] p-3 rounded-lg shadow-md max-w-[280px]">
+        <div className="absolute bottom-4 left-4 z-20 bg-white/95 backdrop-blur-md border border-rose-200/90 p-3 rounded-lg shadow-md max-w-[280px]">
           <div className="flex items-center justify-between gap-2 mb-1">
             <span className="text-[11px] font-bold text-[#64748B] uppercase tracking-wider">
               {activeFocusData.name}

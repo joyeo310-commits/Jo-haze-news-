@@ -38,7 +38,7 @@ export const SensorNetwork: React.FC<SensorNetworkProps> = ({
   // Simulated live API response payload matching data.gov.sg schema
   const simulatedApiResponse = {
     api_version: 'v2.1-civic',
-    agency: 'National Environment Agency (NEA)',
+    agency: 'Hey Haze Telemetry Core (NEA)',
     timestamp: new Date().toISOString(),
     region_metadata: [
       { name: 'west', label_location: { latitude: 1.3573, longitude: 103.7 } },
@@ -143,12 +143,12 @@ export const SensorNetwork: React.FC<SensorNetworkProps> = ({
   return (
     <div className="space-y-6">
       {/* Station Telemetry Directory */}
-      <div className="bg-white rounded-lg border border-[#E2E8F0] shadow-sm overflow-hidden">
-        <div className="p-4 sm:p-5 border-b border-[#E2E8F0] bg-[#F8FAFC] flex flex-wrap items-center justify-between gap-3">
+      <div className="bg-white rounded-lg border border-rose-200/80 shadow-xs overflow-hidden">
+        <div className="p-4 sm:p-5 border-b border-rose-200/80 bg-rose-50/40 flex flex-wrap items-center justify-between gap-3">
           <div>
-            <h2 className="text-sm sm:text-base font-bold text-[#0F172A] flex items-center gap-2">
-              <Radio className="w-4 h-4 text-[#0EA5E9]" />
-              National Continuous Ambient Monitoring Stations (CAMS)
+            <h2 className="text-sm sm:text-base font-bold text-[#1E1124] flex items-center gap-2">
+              <Radio className="w-4 h-4 text-rose-500" />
+              Hey Haze Continuous Ambient Monitoring Stations (CAMS)
             </h2>
             <p className="text-xs text-[#64748B]">
               Real-time hardware status, sensor calibration, and telemetry links
@@ -157,20 +157,20 @@ export const SensorNetwork: React.FC<SensorNetworkProps> = ({
 
           <div className="flex flex-wrap items-center gap-2">
             <div className="relative">
-              <Search className="w-3.5 h-3.5 text-[#64748B] absolute left-2.5 top-2.5" />
+              <Search className="w-3.5 h-3.5 text-rose-400 absolute left-2.5 top-2.5" />
               <input
                 type="text"
                 placeholder="Search station or postal..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-8 pr-3 py-1 text-xs border border-[#CBD5E1] rounded w-48 sm:w-56 focus:outline-none focus:border-[#0284C7] bg-white"
+                className="pl-8 pr-3 py-1 text-xs border border-rose-200 rounded-md w-48 sm:w-56 focus:outline-none focus:border-rose-500 bg-white text-[#1E1124]"
               />
             </div>
 
             <select
               value={filterRegion}
               onChange={(e) => setFilterRegion(e.target.value)}
-              className="px-2.5 py-1 text-xs border border-[#CBD5E1] rounded bg-white text-[#334155] focus:outline-none"
+              className="px-2.5 py-1 text-xs border border-rose-200 rounded-md bg-white text-[#334155] focus:outline-none"
             >
               <option value="all">All Sectors</option>
               <option value="north">North Sector</option>
@@ -185,7 +185,7 @@ export const SensorNetwork: React.FC<SensorNetworkProps> = ({
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs border-collapse">
             <thead>
-              <tr className="bg-[#F8FAFC] border-b border-[#E2E8F0] text-[#64748B] font-semibold">
+              <tr className="bg-rose-50/50 border-b border-rose-200/80 text-rose-950 font-semibold">
                 <th className="py-2.5 px-4">Node ID</th>
                 <th className="py-2.5 px-4">Station Name</th>
                 <th className="py-2.5 px-4">Sector</th>
@@ -196,7 +196,7 @@ export const SensorNetwork: React.FC<SensorNetworkProps> = ({
                 <th className="py-2.5 px-4">Telemetry Health</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#F1F5F9] font-normal text-[#0F172A]">
+            <tbody className="divide-y divide-rose-50 font-normal text-[#1E1124]">
               {filteredStations.map((station) => {
                 const band = getStatusBand(station.psi);
                 return (

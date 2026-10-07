@@ -136,7 +136,7 @@ export default function App() {
   const activeNationalBand = getStatusBand(currentNationalReading.psi24Hr);
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] flex flex-col font-sans selection:bg-[#0EA5E9]/20">
+    <div className="min-h-screen bg-[#FFF5F7] text-[#1E1124] flex flex-col font-sans selection:bg-[#F43F5E]/20">
       {/* Top Header */}
       <Header
         currentScenario={currentScenario}
@@ -154,11 +154,11 @@ export default function App() {
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 py-5 sm:py-6 space-y-5">
         {/* Search match toast feedback */}
         {searchNotification && (
-          <div className="p-3 bg-sky-50 border border-sky-200 text-sky-900 rounded-md text-xs font-medium flex items-center justify-between animate-in fade-in">
+          <div className="p-3 bg-rose-50/90 border border-rose-200 text-rose-900 rounded-md text-xs font-medium flex items-center justify-between animate-in fade-in shadow-2xs">
             <span>{searchNotification}</span>
             <button
               onClick={() => setSearchNotification(null)}
-              className="text-sky-700 hover:text-sky-900 font-bold ml-2 text-sm"
+              className="text-rose-700 hover:text-rose-900 font-bold ml-2 text-sm"
             >
               ×
             </button>
@@ -245,53 +245,53 @@ export default function App() {
       </main>
 
       {/* Official Civic Footer */}
-      <footer className="mt-12 bg-white border-t border-[#E2E8F0] text-xs text-[#64748B]">
+      <footer className="mt-12 bg-white/95 border-t border-rose-200/80 text-xs text-[#64748B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <span className="w-6 h-6 rounded-xs bg-[#0F172A] text-white flex items-center justify-center font-bold text-xs">
-                  CA
+                <span className="w-6 h-6 rounded-md bg-gradient-to-tr from-rose-500 via-pink-500 to-amber-400 text-white flex items-center justify-center font-extrabold text-xs shadow-xs">
+                  HH
                 </span>
-                <span className="font-bold text-[#0F172A]">CIVIC ATMOS</span>
+                <span className="font-extrabold text-[#1E1124] tracking-tight">HEY HAZE</span>
               </div>
               <p className="text-[11px] leading-relaxed text-[#64748B]">
-                Republic of Singapore National Air Quality Telemetry & Environmental Telemetry Network.
+                Summer Environmental Air Telemetry & Continuous Monitoring Network • Singapore.
               </p>
             </div>
 
             <div className="space-y-1.5">
-              <div className="font-semibold text-[#0F172A] text-xs">Emergency Hotlines</div>
+              <div className="font-semibold text-[#1E1124] text-xs">Emergency Hotlines</div>
               <div className="text-[11px] text-[#475569]">NEA Call Centre: 1800-CALL NEA (1800-225-5632)</div>
               <div className="text-[11px] text-[#475569]">Singapore Civil Defence Force (SCDF): 995</div>
               <div className="text-[11px] text-[#475569]">MOH HealthLine: 1800-223-1313</div>
             </div>
 
             <div className="space-y-1.5">
-              <div className="font-semibold text-[#0F172A] text-xs">Methodology & Standards</div>
+              <div className="font-semibold text-[#1E1124] text-xs">Methodology & Standards</div>
               <div className="text-[11px] text-[#475569]">Singapore 24-hr PSI Standard (SS 587)</div>
               <div className="text-[11px] text-[#475569]">WHO Global Air Quality Guidelines (2021)</div>
               <div className="text-[11px] text-[#475569]">ASEAN Specialised Meteorological Centre (ASMC)</div>
             </div>
 
             <div className="space-y-1.5">
-              <div className="font-semibold text-[#0F172A] text-xs">Civic Transparency</div>
+              <div className="font-semibold text-[#1E1124] text-xs">Civic Transparency</div>
               <div className="text-[11px] text-[#475569]">Open Government Data Licence v1.2</div>
               <div className="text-[11px] text-[#475569]">Continuous Telemetry Calibration Protocol</div>
-              <div className="text-[11px] text-[#475569]">GovTech Civic Digital Service Standard</div>
+              <div className="text-[11px] text-[#475569]">Hey Haze Civic Digital Service Standard</div>
             </div>
           </div>
 
-          <div className="pt-6 border-t border-[#F1F5F9] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-[#94A3B8]">
+          <div className="pt-6 border-t border-rose-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-[#94A3B8]">
             <div>
               © 2026 Government of Singapore • National Environment Agency. All rights reserved.
             </div>
             <div className="flex items-center gap-4">
-              <span className="hover:text-[#0F172A] cursor-pointer">Privacy Statement</span>
+              <span className="hover:text-rose-700 cursor-pointer">Privacy Statement</span>
               <span>•</span>
-              <span className="hover:text-[#0F172A] cursor-pointer">Terms of Use</span>
+              <span className="hover:text-rose-700 cursor-pointer">Terms of Use</span>
               <span>•</span>
-              <span className="hover:text-[#0F172A] cursor-pointer">Rate This Service</span>
+              <span className="hover:text-rose-700 cursor-pointer">Rate This Service</span>
             </div>
           </div>
         </div>

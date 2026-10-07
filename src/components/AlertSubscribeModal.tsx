@@ -31,12 +31,12 @@ export const AlertSubscribeModal: React.FC<AlertSubscribeModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in">
       <div className="bg-white rounded-lg border border-[#E2E8F0] shadow-2xl max-w-md w-full overflow-hidden">
         {/* Modal Header */}
-        <div className="p-4 sm:p-5 border-b border-[#E2E8F0] bg-[#F8FAFC] flex items-center justify-between">
+        <div className="p-4 sm:p-5 border-b border-rose-200/80 bg-rose-50/40 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Bell className="w-5 h-5 text-[#0EA5E9]" />
+            <Bell className="w-5 h-5 text-rose-500" />
             <div>
-              <h3 className="text-sm font-bold text-[#0F172A]">
-                Subscribe to National Haze & PSI Alerts
+              <h3 className="text-sm font-bold text-[#1E1124]">
+                Subscribe to Hey Haze Alerts
               </h3>
               <p className="text-[11px] text-[#64748B]">
                 Immediate broadcast when regional air quality exceeds your threshold
@@ -45,7 +45,7 @@ export const AlertSubscribeModal: React.FC<AlertSubscribeModalProps> = ({
           </div>
           <button
             onClick={onClose}
-            className="p-1 rounded text-[#64748B] hover:text-[#0F172A] hover:bg-slate-200 transition-colors"
+            className="p-1 rounded text-[#64748B] hover:text-rose-900 hover:bg-rose-100 transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
@@ -82,10 +82,10 @@ export const AlertSubscribeModal: React.FC<AlertSubscribeModalProps> = ({
                   <button
                     type="button"
                     onClick={() => setChannel('telegram')}
-                    className={`p-2.5 rounded border text-xs font-medium flex flex-col items-center gap-1.5 transition-all ${
+                    className={`p-2.5 rounded-md border text-xs font-medium flex flex-col items-center gap-1.5 transition-all ${
                       channel === 'telegram'
-                        ? 'border-[#0F172A] bg-slate-50 text-[#0F172A] font-semibold'
-                        : 'border-[#CBD5E1] text-[#64748B] hover:bg-slate-50'
+                        ? 'border-rose-600 bg-rose-50 text-rose-900 font-semibold'
+                        : 'border-rose-200 text-[#64748B] hover:bg-rose-50/50'
                     }`}
                   >
                     <Send className="w-4 h-4 text-sky-500" />
@@ -95,26 +95,26 @@ export const AlertSubscribeModal: React.FC<AlertSubscribeModalProps> = ({
                   <button
                     type="button"
                     onClick={() => setChannel('sms')}
-                    className={`p-2.5 rounded border text-xs font-medium flex flex-col items-center gap-1.5 transition-all ${
+                    className={`p-2.5 rounded-md border text-xs font-medium flex flex-col items-center gap-1.5 transition-all ${
                       channel === 'sms'
-                        ? 'border-[#0F172A] bg-slate-50 text-[#0F172A] font-semibold'
-                        : 'border-[#CBD5E1] text-[#64748B] hover:bg-slate-50'
+                        ? 'border-rose-600 bg-rose-50 text-rose-900 font-semibold'
+                        : 'border-rose-200 text-[#64748B] hover:bg-rose-50/50'
                     }`}
                   >
-                    <Smartphone className="w-4 h-4 text-emerald-500" />
+                    <Smartphone className="w-4 h-4 text-rose-500" />
                     <span>SMS Push</span>
                   </button>
 
                   <button
                     type="button"
                     onClick={() => setChannel('email')}
-                    className={`p-2.5 rounded border text-xs font-medium flex flex-col items-center gap-1.5 transition-all ${
+                    className={`p-2.5 rounded-md border text-xs font-medium flex flex-col items-center gap-1.5 transition-all ${
                       channel === 'email'
-                        ? 'border-[#0F172A] bg-slate-50 text-[#0F172A] font-semibold'
-                        : 'border-[#CBD5E1] text-[#64748B] hover:bg-slate-50'
+                        ? 'border-rose-600 bg-rose-50 text-rose-900 font-semibold'
+                        : 'border-rose-200 text-[#64748B] hover:bg-rose-50/50'
                     }`}
                   >
-                    <Mail className="w-4 h-4 text-indigo-500" />
+                    <Mail className="w-4 h-4 text-pink-500" />
                     <span>Email Digest</span>
                   </button>
                 </div>
@@ -122,7 +122,7 @@ export const AlertSubscribeModal: React.FC<AlertSubscribeModalProps> = ({
 
               {/* Input for handle / phone / email */}
               <div>
-                <label className="text-xs font-bold text-[#0F172A] block mb-1">
+                <label className="text-xs font-bold text-[#1E1124] block mb-1">
                   {channel === 'telegram'
                     ? 'Telegram Handle / Mobile Number'
                     : channel === 'sms'
@@ -141,17 +141,17 @@ export const AlertSubscribeModal: React.FC<AlertSubscribeModalProps> = ({
                   }
                   value={contact}
                   onChange={(e) => setContact(e.target.value)}
-                  className="w-full px-3 py-2 text-xs border border-[#CBD5E1] rounded focus:outline-none focus:border-[#0284C7] bg-white text-[#0F172A]"
+                  className="w-full px-3 py-2 text-xs border border-rose-200 rounded-md focus:outline-none focus:border-rose-500 bg-white text-[#1E1124]"
                 />
               </div>
 
               {/* Alert Trigger Threshold */}
               <div>
                 <div className="flex items-center justify-between mb-1">
-                  <label className="text-xs font-bold text-[#0F172A]">
+                  <label className="text-xs font-bold text-[#1E1124]">
                     Alert Trigger Threshold (PSI):
                   </label>
-                  <span className="text-xs font-bold text-[#0284C7] tabular-nums">
+                  <span className="text-xs font-bold text-rose-600 tabular-nums">
                     PSI &ge; {threshold} ({threshold <= 100 ? 'Moderate+' : threshold <= 200 ? 'Unhealthy+' : 'Very Unhealthy+'})
                   </span>
                 </div>
@@ -162,7 +162,7 @@ export const AlertSubscribeModal: React.FC<AlertSubscribeModalProps> = ({
                   step="25"
                   value={threshold}
                   onChange={(e) => setThreshold(Number(e.target.value))}
-                  className="w-full accent-[#0F172A] cursor-pointer"
+                  className="w-full accent-rose-600 cursor-pointer"
                 />
                 <div className="flex justify-between text-[10px] text-[#64748B] mt-1">
                   <span>50 (Moderate)</span>
@@ -171,16 +171,16 @@ export const AlertSubscribeModal: React.FC<AlertSubscribeModalProps> = ({
                 </div>
               </div>
 
-              <div className="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded text-[11px] text-[#475569] flex items-start gap-2">
-                <ShieldAlert className="w-4 h-4 text-[#0EA5E9] shrink-0 mt-0.5" />
+              <div className="p-3 bg-rose-50/40 border border-rose-200/80 rounded-md text-[11px] text-[#475569] flex items-start gap-2">
+                <ShieldAlert className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
                 <span>
-                  Official Government broadcast service. We will never send commercial promotions or spam.
+                  Hey Haze civic notification service. We will never send commercial promotions or spam.
                 </span>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-2.5 bg-[#0F172A] text-white text-xs font-bold rounded hover:bg-slate-800 transition-colors shadow-xs"
+                className="w-full py-2.5 bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 text-white text-xs font-bold rounded-md transition-all shadow-xs shadow-rose-500/20"
               >
                 Confirm Haze Alert Subscription
               </button>

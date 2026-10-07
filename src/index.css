@@ -3,8 +3,8 @@
 @layer base {
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    color: #0F172A;
-    background-color: #F8FAFC;
+    color: #1E1124;
+    background-color: #FFF5F7;
     -webkit-font-smoothing: antialiased;
   }
 }

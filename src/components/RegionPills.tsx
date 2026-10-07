@@ -37,18 +37,18 @@ export const RegionPills: React.FC<RegionPillsProps> = ({
               onClick={() => onSelectRegion(region.id)}
               className={`inline-flex items-center gap-2 h-8 px-4 text-xs sm:text-sm font-medium rounded-full transition-all cursor-pointer whitespace-nowrap select-none ${
                 isSelected
-                  ? 'bg-[#0F172A] text-white font-semibold shadow-xs'
-                  : 'bg-white border border-[#E2E8F0] text-[#334155] hover:bg-[#F8FAFC] hover:border-[#CBD5E1]'
+                  ? 'bg-[#1E1124] text-white font-semibold shadow-xs ring-1 ring-rose-500/30'
+                  : 'bg-white/95 border border-rose-200/70 text-[#334155] hover:bg-rose-50/60 hover:border-rose-300'
               }`}
             >
               <span
-                className="w-1.5 h-1.5 rounded-full shrink-0"
+                className="w-1.5 h-1.5 rounded-full shrink-0 shadow-2xs"
                 style={{ backgroundColor: band.color }}
               />
               <span>{region.label}</span>
               <span
                 className={`text-[11px] tabular-nums font-semibold ml-0.5 ${
-                  isSelected ? 'text-slate-300' : 'text-[#64748B]'
+                  isSelected ? 'text-rose-200' : 'text-[#64748B]'
                 }`}
               >
                 {psi}

@@ -81,12 +81,12 @@ export const ForecastTrends: React.FC<ForecastTrendsProps> = ({
 
   return (
     <div className="space-y-6">
-      {/* 24-Hour Trend Section */}
-      <div className="bg-white rounded-lg border border-[#E2E8F0] shadow-sm overflow-hidden">
-        <div className="p-4 sm:p-5 border-b border-[#E2E8F0] bg-[#F8FAFC] flex flex-wrap items-center justify-between gap-3">
+      {/* 24-Hour Trend Section with Summer Rose Styling */}
+      <div className="bg-white rounded-lg border border-rose-200/80 shadow-xs overflow-hidden">
+        <div className="p-4 sm:p-5 border-b border-rose-200/80 bg-rose-50/40 flex flex-wrap items-center justify-between gap-3">
           <div>
-            <h2 className="text-sm sm:text-base font-bold text-[#0F172A] flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-[#0EA5E9]" />
+            <h2 className="text-sm sm:text-base font-bold text-[#1E1124] flex items-center gap-2">
+              <TrendingUp className="w-4 h-4 text-rose-500" />
               24-Hour Continuous Air Quality Trend
             </h2>
             <p className="text-xs text-[#64748B]">
@@ -95,14 +95,14 @@ export const ForecastTrends: React.FC<ForecastTrendsProps> = ({
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-xs text-[#64748B] font-medium mr-1">Parameter:</span>
-            <div className="inline-flex rounded border border-[#CBD5E1] p-0.5 bg-white text-xs">
+            <span className="text-xs text-rose-900 font-medium mr-1">Parameter:</span>
+            <div className="inline-flex rounded-md border border-rose-200 p-0.5 bg-white text-xs shadow-2xs">
               <button
                 onClick={() => setMetricMode('psi')}
                 className={`px-2.5 py-1 rounded font-medium transition-colors ${
                   metricMode === 'psi'
-                    ? 'bg-[#0F172A] text-white'
-                    : 'text-[#475569] hover:bg-slate-50'
+                    ? 'bg-gradient-to-r from-rose-600 to-pink-600 text-white font-semibold'
+                    : 'text-slate-600 hover:bg-rose-50/60'
                 }`}
               >
                 24-hr PSI
@@ -111,8 +111,8 @@ export const ForecastTrends: React.FC<ForecastTrendsProps> = ({
                 onClick={() => setMetricMode('pm25')}
                 className={`px-2.5 py-1 rounded font-medium transition-colors ${
                   metricMode === 'pm25'
-                    ? 'bg-[#0F172A] text-white'
-                    : 'text-[#475569] hover:bg-slate-50'
+                    ? 'bg-gradient-to-r from-rose-600 to-pink-600 text-white font-semibold'
+                    : 'text-slate-600 hover:bg-rose-50/60'
                 }`}
               >
                 1-hr PM2.5 (µg/m³)
@@ -122,10 +122,10 @@ export const ForecastTrends: React.FC<ForecastTrendsProps> = ({
         </div>
 
         {/* Hover Inspector Bar */}
-        <div className="px-5 py-3 bg-[#F1F5F9]/50 border-b border-[#E2E8F0] flex flex-wrap items-center justify-between gap-4 text-xs">
+        <div className="px-5 py-3 bg-rose-50/20 border-b border-rose-100 flex flex-wrap items-center justify-between gap-4 text-xs">
           <div className="flex items-center gap-4">
             <span className="text-[#64748B]">
-              Inspecting Timestamp: <strong className="text-[#0F172A]">{activeHoverData.hour}</strong>
+              Inspecting Timestamp: <strong className="text-[#1E1124]">{activeHoverData.hour}</strong>
             </span>
             <span className="text-[#64748B]">
               PSI Value:{' '}
@@ -138,13 +138,13 @@ export const ForecastTrends: React.FC<ForecastTrendsProps> = ({
             </span>
             <span className="text-[#64748B]">
               1-hr PM2.5:{' '}
-              <strong className="text-[#0F172A] tabular-nums">
+              <strong className="text-[#1E1124] tabular-nums">
                 {activeHoverData.pm25} µg/m³
               </strong>
             </span>
           </div>
 
-          <div className="text-[11px] text-[#64748B]">
+          <div className="text-[11px] text-rose-700/80">
             Hover along chart data points to inspect past readings
           </div>
         </div>
