@@ -1,0 +1,6 @@
+{
+  "name": "Civic Atmos - National Air Quality & Environmental Telemetry",
+  "description": "Civic-grade national air quality and environmental monitoring interface conforming to official NEA 24-hr PSI and PM2.5 standards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
